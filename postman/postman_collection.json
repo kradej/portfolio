@@ -1,0 +1,961 @@
+{
+	"info": {
+		"_postman_id": "b912a6aa-8dde-44e1-a5b2-b47f1e6dea68",
+		"name": "Zadanie 4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28805168"
+	},
+	"item": [
+		{
+			"name": "Get a member",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/members/:id",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"members",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "radejk"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stworzenie nowej tablicy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();\r",
+							"\r",
+							"pm.collectionVariables.set(\"TablicaId\", response.id);\r",
+							"\r",
+							"const res = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 200\", () => {\r",
+							"  pm.expect(pm.response.code).to.eql(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/boards/?name=Nowa_tablica&key={{apikey}}&token={{apitoken}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"boards",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Nowa_tablica"
+						},
+						{
+							"key": "key",
+							"value": "{{apikey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{apitoken}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stworzenie listy 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();\r",
+							"\r",
+							"pm.collectionVariables.set(\"List1Id\", response.id);\r",
+							"\r",
+							"const res = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 200\", () => {\r",
+							"  pm.expect(pm.response.code).to.eql(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/lists?name=Lista1&idBoard={{TablicaId}}&key={{apikey}}&token={{apitoken}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Lista1"
+						},
+						{
+							"key": "idBoard",
+							"value": "{{TablicaId}}"
+						},
+						{
+							"key": "key",
+							"value": "{{apikey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{apitoken}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stworzenie listy 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();\r",
+							"\r",
+							"pm.collectionVariables.set(\"List2Id\", response.id);\r",
+							"\r",
+							"const res = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 200\", () => {\r",
+							"  pm.expect(pm.response.code).to.eql(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/lists?name=Lista2&idBoard={{TablicaId}}&key={{apikey}}&token={{apitoken}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Lista2"
+						},
+						{
+							"key": "idBoard",
+							"value": "{{TablicaId}}"
+						},
+						{
+							"key": "key",
+							"value": "{{apikey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{apitoken}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stworzenie listy 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();\r",
+							"\r",
+							"pm.collectionVariables.set(\"List3Id\", response.id);\r",
+							"\r",
+							"const res = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 200\", () => {\r",
+							"  pm.expect(pm.response.code).to.eql(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/lists?name=Lista3&idBoard={{TablicaId}}&key={{apikey}}&token={{apitoken}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Lista3"
+						},
+						{
+							"key": "idBoard",
+							"value": "{{TablicaId}}"
+						},
+						{
+							"key": "key",
+							"value": "{{apikey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{apitoken}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Aktualizacja nazwy listy 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Name update\", () => {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.name).to.equal('NowaLista1');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/lists/{{List1Id}}?key={{apikey}}&token={{apitoken}}&name=NowaLista1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"lists",
+						"{{List1Id}}"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{apikey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{apitoken}}"
+						},
+						{
+							"key": "name",
+							"value": "NowaLista1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Archiwizacja Listy 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"List archivization\", () => {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.closed).to.equal(true);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/lists/{{List3Id}}/closed?key={{apikey}}&token={{apitoken}}&value=true",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"lists",
+						"{{List3Id}}",
+						"closed"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{apikey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{apitoken}}"
+						},
+						{
+							"key": "value",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stworzenie Karty 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();\r",
+							"\r",
+							"pm.collectionVariables.set(\"Cart1Id\", response.id);\r",
+							"\r",
+							"const res = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 200\", () => {\r",
+							"  pm.expect(pm.response.code).to.eql(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards?idList={{List2Id}}&key={{apikey}}&token={{apitoken}}&name=Karta1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "idList",
+							"value": "{{List2Id}}"
+						},
+						{
+							"key": "key",
+							"value": "{{apikey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{apitoken}}"
+						},
+						{
+							"key": "name",
+							"value": "Karta1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stworzenie Karty 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();\r",
+							"\r",
+							"pm.collectionVariables.set(\"Cart2Id\", response.id);\r",
+							"\r",
+							"const res = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 200\", () => {\r",
+							"  pm.expect(pm.response.code).to.eql(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards?idList={{List2Id}}&key={{apikey}}&token={{apitoken}}&name=Karta2",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "idList",
+							"value": "{{List2Id}}"
+						},
+						{
+							"key": "key",
+							"value": "{{apikey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{apitoken}}"
+						},
+						{
+							"key": "name",
+							"value": "Karta2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stworzenie Karty 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();\r",
+							"\r",
+							"pm.collectionVariables.set(\"Cart3Id\", response.id);\r",
+							"\r",
+							"const res = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 200\", () => {\r",
+							"  pm.expect(pm.response.code).to.eql(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards?idList={{List2Id}}&key={{apikey}}&token={{apitoken}}&name=Karta3",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "idList",
+							"value": "{{List2Id}}"
+						},
+						{
+							"key": "key",
+							"value": "{{apikey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{apitoken}}"
+						},
+						{
+							"key": "name",
+							"value": "Karta3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stworzenie Karty 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();\r",
+							"\r",
+							"pm.collectionVariables.set(\"Cart4Id\", response.id);\r",
+							"\r",
+							"const res = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 200\", () => {\r",
+							"  pm.expect(pm.response.code).to.eql(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards?idList={{List2Id}}&key={{apikey}}&token={{apitoken}}&name=Karta4",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "idList",
+							"value": "{{List2Id}}"
+						},
+						{
+							"key": "key",
+							"value": "{{apikey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{apitoken}}"
+						},
+						{
+							"key": "name",
+							"value": "Karta4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stworzenie Karty 5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json();\r",
+							"\r",
+							"pm.collectionVariables.set(\"Cart5Id\", response.id);\r",
+							"\r",
+							"const res = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 200\", () => {\r",
+							"  pm.expect(pm.response.code).to.eql(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards?idList={{List2Id}}&key={{apikey}}&token={{apitoken}}&name=Karta5",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards"
+					],
+					"query": [
+						{
+							"key": "idList",
+							"value": "{{List2Id}}"
+						},
+						{
+							"key": "key",
+							"value": "{{apikey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{apitoken}}"
+						},
+						{
+							"key": "name",
+							"value": "Karta5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Aktualizacja nazwy Karty 1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Body contains string\",() => {\r",
+							"  pm.expect(response.name).to.equal(\"aktualna_karta_1\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards/{{Cart1Id}}?key={{apikey}}&token={{apitoken}}&name=aktualna_karta_1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards",
+						"{{Cart1Id}}"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{apikey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{apitoken}}"
+						},
+						{
+							"key": "name",
+							"value": "aktualna_karta_1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usunięcie Karty 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {\r",
+							"  pm.expect(pm.response.code).to.eql(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards/{{Cart2Id}}?key={{apikey}}&token={{apitoken}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards",
+						"{{Cart2Id}}"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{apikey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{apitoken}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Zamknięcie Karty 3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Card closed\", () => {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.closed).to.equal(true);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards/{{Cart3Id}}?key={{apikey}}&token={{apitoken}}&closed=true",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards",
+						"{{Cart3Id}}"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{apikey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{apitoken}}"
+						},
+						{
+							"key": "closed",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Przeniesienie Karty 4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Move Card 4\", () => {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson.idList).to.equal(pm.collectionVariables.get('List2Id'));\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards/{{Cart4Id}}?key={{apikey}}&token={{apitoken}}&idList={{List2Id}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards",
+						"{{Cart4Id}}"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{apikey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{apitoken}}"
+						},
+						{
+							"key": "idList",
+							"value": "{{List2Id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Utworzenie checklisty na Karcie 5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 200\", () => {\r",
+							"  pm.expect(pm.response.code).to.eql(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/cards/{{Cart5Id}}/checklists?key={{apikey}}&token={{apitoken}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"cards",
+						"{{Cart5Id}}",
+						"checklists"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{apikey}}"
+						},
+						{
+							"key": "token",
+							"value": "{{apitoken}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "TablicaId",
+			"value": ""
+		},
+		{
+			"key": "List1Id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "List2Id",
+			"value": ""
+		},
+		{
+			"key": "List3Id",
+			"value": ""
+		},
+		{
+			"key": "Cart1Id",
+			"value": ""
+		},
+		{
+			"key": "Cart2Id",
+			"value": ""
+		},
+		{
+			"key": "Cart3Id",
+			"value": ""
+		},
+		{
+			"key": "Cart4Id",
+			"value": ""
+		},
+		{
+			"key": "Cart5Id",
+			"value": ""
+		}
+	]
+}
