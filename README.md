@@ -13,6 +13,8 @@ I love team work but also really appreciate working alone. I am a team player an
 I am also really curious and inquisitive. Looking for a faults is my natural trait. Looking for a way to break something down sounds like fun for me.
 In the future I want to be automation tester. I already have a few projects in my portfolio and I'm still developing my skills in this area.
 
+___
+
 ## Courses and Certificates
 
 - ISTQB: Foundation Level
@@ -30,7 +32,7 @@ In the future I want to be automation tester. I already have a few projects in m
 - Google Analytics
 - YouTube and Video Marketing
 - YouTube in practice
-
+___
 ## Technologies / Tools
 
 - [Java Script](https://github.com/kradej/js-course) - basics
@@ -55,7 +57,7 @@ In the future I want to be automation tester. I already have a few projects in m
 - Confluence
 - ShareX
 - Microsoft Office
-
+___
 ## Skills
 
 * knowledge of testing procedures and the creation of test documentation
