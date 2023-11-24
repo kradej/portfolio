@@ -38,11 +38,11 @@ In the future I want to be automation tester. I already have a few projects in m
 - CSS - basics
 - HTML - basics
 - SQL - basics
+- [Postman](https://github.com/kradej/portfolio/tree/main/postman)
 - JSON
 - Git
 - IntelliJ
 - Visual Studio Code
-- Postman
 - JIRA
 - Dev Tools
 - Test Link
@@ -62,8 +62,8 @@ In the future I want to be automation tester. I already have a few projects in m
 * knowledge of Syllabus ISTQB Foundation level
 * Exploratory testing
 * Functional testing
-* Test planning
-* Ad hoc testing
+* [Test planning](https://github.com/kradej/portfolio/blob/main/test-documentation/TestPlan.pdf)
+* [Ad hoc testing](https://github.com/kradej/portfolio/blob/main/test-documentation/TestRaport.pdf)
 * Rest API testing
 * Test scenarios
 * Agile methodology
